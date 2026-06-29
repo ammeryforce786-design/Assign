@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Form Render</title>
+
+<style>
+body{
+    font-family: Arial, sans-serif;
+    margin:40px;
+}
+
+fieldset{
+    margin-bottom:20px;
+    padding:15px;
+}
+
+table{
+    width:100%;
+}
+
+td{
+    padding:8px;
+    vertical-align:top;
+}
+
+input[type=text],
+input[type=number],
+input[type=email],
+select{
+    width:250px;
+    padding:6px;
+}
+
+textarea{
+    width:100%;
+    height:120px;
+    padding:6px;
+}
+
+.button{
+    text-align:right;
+}
+
+button{
+    background:blue;
+    color:white;
+    padding:10px 20px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:darkblue;
+}
+</style>
+
+</head>
+
+<body>
+
+<form action="https://teach-backend-fawn.vercel.app/api/product"
+      method="POST"
+      enctype="multipart/form-data">
+
+<fieldset>
+<legend>General Info</legend>
+
+<table>
+
+<tr>
+<td>Item Name</td>
+<td>
+<input type="text" name="itemName" required>
+</td>
+</tr>
+
+<tr>
+<td>Description</td>
+<td>
+<textarea name="itemDescription"></textarea>
+</td>
+</tr>
+
+<tr>
+<td>Category</td>
+<td>
+<select name="category">
+<option value="notSpecified">notSpecified</option>
+<option value="consumption">consumption</option>
+<option value="household">household</option>
+<option value="electronic">electronic</option>
+<option value="gadget">gadget</option>
+</select>
+</td>
+</tr>
+
+</table>
+
+</fieldset>
+
+<fieldset>
+
+<legend>Misc.</legend>
+
+<table>
+
+<tr>
+<td>Inventory Amount</td>
+<td>
+<input type="number" name="inventoryAmount">
+</td>
+</tr>
+
+<tr>
+<td>List Price</td>
+<td>
+<input type="number" name="listPrice">
+</td>
+</tr>
+
+<tr>
+<td>Available Stores</td>
+<td>
+<label><input type="checkbox" name="availableStore[]" value="Bangkok"> Bangkok</label>
+
+<label><input type="checkbox" name="availableStore[]" value="Pattaya"> Pattaya</label>
+
+<label><input type="checkbox" name="availableStore[]" value="Phuket"> Phuket</label>
+</td>
+</tr>
+
+<tr>
+<td>Status</td>
+<td>
+
+<label>
+<input type="radio" name="status" value="Active">
+Active
+</label>
+
+<label>
+<input type="radio" name="status" value="Inactive">
+Inactive
+</label>
+
+</td>
+</tr>
+
+</table>
+
+</fieldset>
+
+<fieldset>
+
+<legend>Staff</legend>
+
+<table>
+
+<tr>
+<td>Staff Email</td>
+<td>
+<input type="email" name="staffEmail" required>
+</td>
+</tr>
+
+</table>
+
+</fieldset>
+
+<div class="button">
+<button type="submit">Submit Form</button>
+</div>
+
+</form>
+
+</body>
+</html>
